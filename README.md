@@ -26,7 +26,6 @@ Oracle Cloud Account: Set up a free Oracle Cloud account to access Oracle Cloud 
     - Navigate to Identity and Security > Identity > Domains > Users.
     - Assign the appropriate roles to your user to ensure access to the necessary services within OIC.
 
-
 ### Step 5: Configure REST Connection in OIC
 * Open OIC Design Area:
 * Navigate to OIC > Design > Integrations.
@@ -45,15 +44,45 @@ Oracle Cloud Account: Set up a free Oracle Cloud account to access Oracle Cloud 
 * Add a new database connection using the Oracle ATP type.
 * Upload the wallet file and configure the database connection parameters.
 
-### Integration Setup
+### Step 7: Integration Build Setup
 * Start Integration Development:
-* In OIC, select App Driven option under the integration type.
-* Configure the integration to read data from the CSV file stored in Object Storage as a Trigger.
-* Map the readCSV file with its proper format.
+#### Trigger - GetObjectStorage
+* Purpose:
+The Trigger was supposed to initiate the integration flow by connecting to OCI Object Storage to fetch the CSV file.
+* Configuration:
+The REST connection was configured with the necessary authentication credentials and pointed to the correct URI where the CSV file was stored.
+* Challenges:
+Despite the correct configuration, there were issues with correctly accessing or interpreting the file content, which impacted subsequent steps in the flow.
+
+#### Stage File - readCSV
+Purpose:
+The Stage File action was intended to read the entire content of the CSV file fetched from Object Storage.
+Configuration:
+The operation was set to "Read Entire File," but there were challenges related to specifying the correct File Reference from the Trigger.
+Challenges:
+The Stage File action did not successfully read the file content. Possible issues included incorrect file reference mapping or issues with the file format/encoding that was not properly handled.
+
+#### Logger - Logger1
+Purpose:
+The Logger action was configured to log the content of the CSV or messages related to the data processing.
+Challenges:
+Due to the issues in the previous step (Stage File), the logger might not have captured the expected data, making it difficult to verify what was processed.
 
 
+#### Map - InsertCSVData
+Purpose:
+The Map action was supposed to map the CSV data fields to the corresponding columns in the ATP database table.
+Challenges:
+Since the data was not correctly read, the mapping step likely failed or did not map the expected data to the ATP table structure.
+
+#### Invoke - InsertCSVData
+Purpose:
+The Invoke action was intended to insert the mapped data into the Oracle ATP database.
+Challenges:
+Without correctly mapped data, the insertion step would not have succeeded. The data may not have reached this point in the integration due to earlier failures.
+
+![image](https://github.com/user-attachments/assets/17611faf-7b49-4dba-a5bd-e47c7d07c0d4)
 
 
-REST IS PENDING, FACED AN ISSUE WITH MAPPING, NEED MORE CLARITY WITH RESPECT TO ORACLE CLOUD. 
 
 
