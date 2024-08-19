@@ -51,11 +51,11 @@ Oracle Cloud Account: Set up a free Oracle Cloud account to access Oracle Cloud 
 ### Step 7: Integration Build Setup
 * Start Integration Development:
 #### Trigger - GetObjectStorage
-* Purpose:
+1. Purpose:
 The Trigger was supposed to initiate the integration flow by connecting to OCI Object Storage to fetch the CSV file.
-* Configuration:
+2 Configuration:
 The REST connection was configured with the necessary authentication credentials and pointed to the correct URI where the CSV file was stored.
-* Challenges:
+3 Challenges:
 Despite the correct configuration, there were issues with correctly accessing or interpreting the file content, which impacted subsequent steps in the flow.
 
 #### Stage File - readCSV
