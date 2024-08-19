@@ -61,10 +61,12 @@ Despite the correct configuration, there were issues with correctly accessing or
 #### Stage File - readCSV
 1. Purpose:
 The Stage File action was intended to read the entire content of the CSV file fetched from Object Storage.
+
 2. Configuration:
 The operation was set to "Read Entire File," but there were challenges related to specifying the correct File Reference from the Trigger.
+
 3. Challenges:
-The Stage File action did not successfully read the file content. Possible issues included incorrect file reference mapping or issues with the file format/encoding that was not properly handled.
+The Stage File action did not successfully read the file content. Possible issues included incorrect file reference mapping or issues with the file format/encoding that were improperly handled.
 
 #### Logger - Logger1
 1. Purpose:
