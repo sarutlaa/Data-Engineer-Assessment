@@ -84,5 +84,25 @@ Without correctly mapped data, the insertion step would not have succeeded. The 
 ![image](https://github.com/user-attachments/assets/17611faf-7b49-4dba-a5bd-e47c7d07c0d4)
 
 
+## Data Analysis After Successful Integration Flow Execution
+If the integration flow had been executed successfully, the next logical step would be to proceed with data analysis on the data that has been successfully loaded into the Oracle Autonomous Transaction Processing (ATP) database.
+
+Write an SQL query to calculate complaint totals by product.
+
+```SQL
+
+SELECT 
+    PRODUCT, 
+    COUNT(*) AS TOTAL_COMPLAINTS
+FROM 
+    CONSUMER_COMPLAINTS
+GROUP BY 
+    PRODUCT
+ORDER BY 
+    TOTAL_COMPLAINTS DESC;
+
+```
+
+
 
 
