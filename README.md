@@ -6,7 +6,8 @@ This document outlines the steps required to set up and configure the necessary 
 ## Prerequisites
 Oracle Cloud Account: Set up a free Oracle Cloud account to access Oracle Cloud Infrastructure (OCI) services.
 
-![image](https://github.com/user-attachments/assets/16932bc5-4ff3-472c-b77d-4f275c8711c9)
+![image](https://github.com/user-attachments/assets/240c1bfe-b733-4b9f-8221-a511e87b12be)
+
 
 
 ## Steps to Implement
