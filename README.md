@@ -6,6 +6,9 @@ This document outlines the steps required to set up and configure the necessary 
 ## Prerequisites
 Oracle Cloud Account: Set up a free Oracle Cloud account to access Oracle Cloud Infrastructure (OCI) services.
 
+![image](https://github.com/user-attachments/assets/16932bc5-4ff3-472c-b77d-4f275c8711c9)
+
+
 ## Steps to Implement
 ### Step 1: Upload the CSV File to Object Storage
 * Create a Bucket: Log in to your Oracle Cloud account and navigate to the Object Storage service. Create a new bucket to store your CSV file.
